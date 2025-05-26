@@ -1,0 +1,7 @@
+{
+  "name": "appmairanni",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
