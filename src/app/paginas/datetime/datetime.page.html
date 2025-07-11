@@ -1,0 +1,11 @@
+<app-header [titulo]="'DATE AND TIME'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-datetime-button datetime="datetime" (click)="date()"></ion-datetime-button>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime" (ionChange)="getDate($event)" displayFormat="DD/MM/YYYY" [min]="selectedDate"  max="2025-12-23"  ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+</ion-content>

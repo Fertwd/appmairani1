@@ -1,0 +1,13 @@
+<app-header [titulo]="'Chcekbox'"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+          <h1>LISTA DE BECADOS</h1>
+      <ion-item *ngFor="let e of infoNombres">
+          <ion-label>{{e.name}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="e.beca"></ion-checkbox>
+      </ion-item>
+  </ion-list>
+</ion-content>
+

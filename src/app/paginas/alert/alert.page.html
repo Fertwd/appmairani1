@@ -1,0 +1,10 @@
+<app-header titulo="alerta"></app-header>
+
+<ion-content>
+    <ion-button (click)="functionalerta1()">Click me</ion-button>
+    <ion-button (click)="functionalerta2()">Registro</ion-button>
+    <ion-button (click)="functionalerta3()">Console</ion-button>
+    <ion-button (click)="functionalerta4()">Menú</ion-button>
+    <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" [buttons]="functionalerta4"></ion-alert>
+    <ion-button (click)="functionalerta5()">Registro 2</ion-button>
+</ion-content>
