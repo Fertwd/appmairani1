@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package appmairanni.iti.prueba;
 
 import com.getcapacitor.BridgeActivity;
 
