@@ -81,6 +81,12 @@ export class InicioPage implements OnInit {
       redirecTo: '/alumnolist',
       icon: 'people-outline'
     },
+    {
+      name: 'Notificaciones', 
+      redirecTo: '/notificaciones',
+      icon: 'notifications-outline'
+
+    }
   ];
 
   constructor() { }

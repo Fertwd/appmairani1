@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false, 
-  OneSignalID: 'a9e0f44c-4076-4927-9dd2-73048ba1a330',
-  oneSignalRestApi: 'os_v2_app_vhqpitcaozesphosomcixindgcsollv4cesuh2uinii4qygpry2nr636m2nzvc67lgqnnpyytnk4ola7gels6dihjs2ww7akuojrjly'
+  OneSignalID: 'e4f302e9-b385-4905-a3c9-afe5aa20bdb6',
+  oneSignalRestApi: 'os_v2_app_4tzqf2ntqveqli6jv7s2uif5w3sqwlvuy2ieap4gnsp2sbpckocqdhmkblv5kvo3cjjegfeshyftrizu6lzr6bwf7xvaabqgk4xtnyq'
 };
 
 /*

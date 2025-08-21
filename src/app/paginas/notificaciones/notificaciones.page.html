@@ -1,0 +1,80 @@
+<app-header titulo="notificaciones"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <h2>Enviar Notificación Push</h2>
+    
+    <form [formGroup]="notificationForm" (ngSubmit)="sendNotification()">
+      <ion-item>
+        <ion-label position="stacked">Título *</ion-label>
+        <ion-input 
+          formControlName="title" 
+          placeholder="Ingresa el título de la notificación"
+          [class.ion-invalid]="notificationForm.get('title')?.invalid && notificationForm.get('title')?.touched">
+        </ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="notificationForm.get('title')?.invalid && notificationForm.get('title')?.touched">
+        El título es requerido
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="stacked">Mensaje *</ion-label>
+        <ion-textarea 
+          formControlName="message" 
+          placeholder="Ingresa el mensaje de la notificación"
+          rows="3"
+          [class.ion-invalid]="notificationForm.get('message')?.invalid && notificationForm.get('message')?.touched">
+        </ion-textarea>
+      </ion-item>
+      <ion-note color="danger" *ngIf="notificationForm.get('message')?.invalid && notificationForm.get('message')?.touched">
+        El mensaje es requerido
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="stacked">URL (Opcional)</ion-label>
+        <ion-input 
+          formControlName="url" 
+          placeholder="https://ejemplo.com"
+          type="url">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha de Envío (Opcional)</ion-label>
+        <ion-datetime 
+          formControlName="sendDate"
+          presentation="date-time"
+          [min]="minDate"
+          placeholder="Selecciona fecha y hora">
+        </ion-datetime>
+      </ion-item>
+      <ion-note color="medium">
+        Si no seleccionas fecha, se enviará inmediatamente
+      </ion-note>
+
+      <div class="ion-margin-top">
+        <ion-button 
+          expand="block" 
+          type="submit" 
+          [disabled]="notificationForm.invalid || isLoading">
+          <ion-icon name="send" slot="start"></ion-icon>
+          {{ isLoading ? 'Enviando...' : 'Enviar Notificación' }}
+        </ion-button>
+      </div>
+    </form>
+
+    <!-- Resultado del envío -->
+    <ion-card *ngIf="sendResult" class="ion-margin-top">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon [name]="sendResult.success ? 'checkmark-circle' : 'close-circle'" 
+                    [color]="sendResult.success ? 'success' : 'danger'"></ion-icon>
+          {{ sendResult.success ? 'Éxito' : 'Error' }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ sendResult.message }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

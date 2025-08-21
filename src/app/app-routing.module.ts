@@ -63,6 +63,10 @@ const routes: Routes = [
   {
     path: 'alumnolist',
     loadChildren: () => import('./paginas/alumnolist/alumnolist.module').then( m => m.AlumnolistPageModule)
+  },
+  {
+    path: 'notificaciones',
+    loadChildren: () => import('./paginas/notificaciones/notificaciones.module').then( m => m.NotificacionesPageModule)
   }
 ];
 @NgModule({

@@ -8,6 +8,9 @@ const config: CapacitorConfig = {
     PushNotifications: {
       presentationOptions: ["badge", "sound", "alert"],
     },
+    OneSignal: {
+      appId: 'e4f302e9-b385-4905-a3c9-afe5aa20bdb6',
+    },
   },
   
 };
